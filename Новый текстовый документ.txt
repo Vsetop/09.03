@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="textarea" cols="12" rows="3"></textarea>
+        <table>
+            <tr>
+            <th><button id='seven' onclick="print('7')">7</button></th>
+            <th><button id='eight' onclick="print('8')">8</button></th>
+            <th><button id='nine' onclick="print('9')">9</button></th>
+            <th><button id='divisionButton' onclick="print('/')">/</button></th>
+            </tr>
+            <tr>
+            <th><button id='four' onclick="print('4')">4</button></th>
+            <th><button id='five' onclick="print('5')">5</button></th>
+            <th><button id='six' onclick="print('6')">6</button></th>
+            <th><button id='multiplyButton' onclick="print('*')">*</button></th>
+            </tr>
+            <tr>
+            <th><button id='one' onclick="print('1')">1</button></th>
+            <th><button id='two' onclick="print('2')">2</button></th>
+            <th><button id='three' onclick="print('4')">3</button></th>
+            <th><button id='MinusButton' onclick="print('-')">-</button></th>
+            </tr>
+            <tr>
+            <th><button id='zero'onclick="print('0')">0</button></th>
+            <th><button id='equal'onclick="print('=')">=</button></th>
+            <th><button id='classMath'onclick="print('m')">M</button></th>
+            <th><button id='PlusButton'onclick="print('+')">+</button></th>
+            </tr>
+        </table>
+    <script>
+        let FirstNumber=0
+        function print(number){
+            textarea.append(number)
+        }
+    </script>
+</body>
+</html>
