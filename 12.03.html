@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="txt" oninput="checktextarea()" cols="12" rows="3"></textarea>
+        <table>
+            <tr>
+            <th><button id='seven' onclick="print('7')">7</button></th>
+            <th><button id='eight' onclick="print('8')">8</button></th>
+            <th><button id='nine' onclick="print('9')">9</button></th>
+            <th><button id='divisionButton' onclick="print('/')">/</button></th>
+            </tr>
+            <tr>
+            <th><button id='four' onclick="print('4')">4</button></th>
+            <th><button id='five' onclick="print('5')">5</button></th>
+            <th><button id='six' onclick="print('6')">6</button></th>
+            <th><button id='multiplyButton' onclick="print('*')">*</button></th>
+            <th><button id='FactButton' onclick="print()">!(Factorial)</button></th>
+            </tr>
+            <tr>
+            <th><button id='one' onclick="print('1')">1</button></th>
+            <th><button id='two' onclick="print('2')">2</button></th>
+            <th><button id='three' onclick="print('3')">3</button></th>
+            <th><button id='MinusButton' onclick="print('-')">-</button></th>
+            <th><button id='ButtonP' onclick="print(P)">NumbP</button></th>
+            </tr>
+            <tr>
+            <th><button id='zero'onclick="print('0')">0</button></th>
+            <th><button id='equal' onclick="equal()">=</button></th>
+            <th><button id='clearButton' onclick="clearTextarea()">C</button></th>
+            <th><button id='PlusButton'onclick="print('+')">+</button></th>
+            <th><button id='ButtonDouble' onclick="print()">Double</button></th>
+            </tr>
+        </table>
+    <script>
+        let arr =[]
+        let FirstNumber=0
+        function print(number){
+            txt.append(number)
+        }
+        function checktextarea(){
+            let textarea = document.getElementById('txt')
+            for(let i = 0;i<textarea.value.length;i++){
+               if(textarea.value.charAt(i) === '+'){
+                arr.push(textarea.value)
+               }
+            }
+        }
+        function equal(){
+            let result = eval(txt.value)
+            txt.value = result
+        }
+        function clearTextarea(){
+            txt.value = ""
+        }
+        function print(number){
+            if(number === '.' && txt.value.includes('.')){
+            return
+            }
+        txt.append(number)
+        }   
+        ButtonDouble.onclick = function double(){
+            let number = parseFloat(txt.value)
+            let result = number * number 
+            txt.value = result
+            }
+            FactButton.onclick = function factorial(){
+                let arr1 =[]
+                let NumbBeforeNeed = parseFloat(txt.value)
+                let result = 1
+            for(let i = 1; i <= NumbBeforeNeed; i++){
+                result *= i
+                }
+                txt.value = result
+            }
+        const P = '3.1415'
+    </script>
+</body>
+</html>
